@@ -6,4 +6,9 @@ This will create binaries for testing, and the tool *filter*.
 
 Example usage of the tool:
 
-bin/filter -i infoID -o comparator -v againstValue -f sourceFilePath > outfilePath
+bin/filter -i infoID -o opr_to_compare -v againstValue -f sourceFilePath > outfilePath
+
+values allowed for option -o (opr_to_compare)
+    smaller
+    equal
+    larger
