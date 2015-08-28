@@ -20,4 +20,5 @@ class MetaInfo {
 
     //filter
     bool keep_variant(std::string value1, std::string opr, std::string value2);
+    bool can_be_filtered();
 };

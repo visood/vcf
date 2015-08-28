@@ -29,6 +29,33 @@ int main(int argc, char** argv) {
     VariantFileReader sampleFile = VariantFileReader(filename);
 
 
+
+
+    //construct the metainfo
+    std::vector<std::string> metainfo = sampleFile.get_metainfo();
+
+    std::map<std::string, MetaInfo*> metainfoes {};
+    std::vector<std::string>::iterator vit;
+    for(vit=metainfo.begin();
+        vit!=metainfo.end();
+        ++vit) {
+        MetaInfo* minfo = new MetaInfo(*vit);
+        metainfoes[minfo->get_id()] = minfo;
+    }
+    std::map<std::string, MetaInfo*>::iterator mit;
+
+    int number_variants = sampleFile.get_number_variants();
+    if (not metainfoes.count(infoID)) {
+        std::cout << "no metadata on  INFO with ID " << infoID << std::endl;
+        exit(EXIT_FAILURE);
+    }
+    MetaInfo* reqdInfo = metainfoes[infoID];
+    if(not reqdInfo->can_be_filtered()) {
+        exit(EXIT_FAILURE);
+    }
+    // go through the variants, and filter them
+    int num_variants_with_reqd_id = 0;
+    std::vector<bool> filtered_variants;
     //out -- first we write back the meta info and the header
     std::vector<std::string> metadata_strings = sampleFile.get_metadata_strings();
     std::vector<std::string>::iterator msitr;
@@ -55,29 +82,8 @@ int main(int argc, char** argv) {
         std::cout << newfilter << std::endl;
     }
 
-
     //add the header
-    std::cout << '#' + sampleFile.get_header();
-
-
-    //construct the metainfo
-    std::vector<std::string> metainfo = sampleFile.get_metainfo();
-
-    std::map<std::string, MetaInfo*> metainfoes {};
-    std::vector<std::string>::iterator vit;
-    for(vit=metainfo.begin();
-        vit!=metainfo.end();
-        ++vit) {
-        MetaInfo* minfo = new MetaInfo(*vit);
-        metainfoes[minfo->get_id()] = minfo;
-    }
-    std::map<std::string, MetaInfo*>::iterator mit;
-
-    // go through the variants, and filter them
-    int number_variants = sampleFile.get_number_variants();
-    MetaInfo* reqdInfo = metainfoes[infoID];
-    int num_variants_with_reqd_id = 0;
-    std::vector<bool> filtered_variants;
+    std::cout << '#' + sampleFile.get_header() << std::endl;
     for (i = 0; i < number_variants; i++) {
         std::string variant_string = sampleFile.get_variant(i);
         Variant variant(variant_string);

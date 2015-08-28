@@ -48,6 +48,15 @@ void MetaInfo::print(int ntab) {
 
 
 //filter
+bool MetaInfo::can_be_filtered(){
+    if ((number != "1") and ((type != "Integer") or (type != "Float"))){
+        std::cout << "filtering for INFO " << id << " with Number = " << number << " not implemented" << std::endl;
+        std::cout << "please use only INFO with Number = 1 and Type = Integer or Float" << std::endl;
+        return false;
+    }
+    else return true;
+}
+
 bool MetaInfo::keep_variant(std::string value1,
     std::string opr,
     std::string value2) {
