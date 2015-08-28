@@ -1,3 +1,9 @@
-The main tool, *filter* sits in bin/ and can be invoked as follows,
+The main tool, *filter* sits in bin/ compiled on a Mac OS X.
+To compile:
+    make
+    make clean
+This will create binaries for testing, and the tool *filter*.
 
-bin/filter -i infoID -o comparator -v againstValue -f sourceFilePath
+Example usage of the tool:
+
+bin/filter -i infoID -o comparator -v againstValue -f sourceFilePath > outfilePath
