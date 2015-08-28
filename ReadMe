@@ -1,3 +1,3 @@
 The main tool, *filter* sits in bin/ and can be invoked as follows,
 
-bin/filter -i infoID -o comparator -v againstValue -f sourceFilePath
+bin/filter -i infoID -o comparator -v againstValue -f sourceFilePath > outfilePath
