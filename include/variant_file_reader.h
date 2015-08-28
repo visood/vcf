@@ -28,6 +28,7 @@ std::map<std::string, std::string> parse_key_values(
 
 class VariantFileReader{
     private:
+        std::vector<std::string> metadata_strings;
         std::map<std::string, std::vector<std::string> > metadata;
         std::vector<std::string> variants;
         std::string header;
@@ -38,8 +39,10 @@ class VariantFileReader{
 
     // getters 
     std::string get_header();
+    int get_number_variants();
     std::string get_variant(int n);
     std::vector<std::string> get_metainfo();
+    std::vector<std::string> get_metadata_strings();
     // print info
     void printMetadata();
     void printVariants();

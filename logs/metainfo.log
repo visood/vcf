@@ -1,0 +1,313 @@
+file path provied: data/sample.vcf
+---------------METAINFO OBJECTS------------0
+--------METAINFO OBJECT------------		
+id: AC
+		
+number: A
+		
+type: Integer
+		
+description: "Allele count in genotypes
+		
+source: 
+		
+version: 
+1
+--------METAINFO OBJECT------------		
+id: AF
+		
+number: A
+		
+type: Float
+		
+description: "Allele Frequency
+		
+source: 
+		
+version: 
+2
+--------METAINFO OBJECT------------		
+id: AN
+		
+number: 1
+		
+type: Integer
+		
+description: "Total number of alleles in called genotypes"
+		
+source: 
+		
+version: 
+3
+--------METAINFO OBJECT------------		
+id: BaseQRankSum
+		
+number: 1
+		
+type: Float
+		
+description: "Z-score from Wilcoxon rank sum test of Alt Vs. Ref base qualities"
+		
+source: 
+		
+version: 
+4
+--------METAINFO OBJECT------------		
+id: ClippingRankSum
+		
+number: 1
+		
+type: Float
+		
+description: "Z-score From Wilcoxon rank sum test of Alt vs. Ref number of hard clipped bases"
+		
+source: 
+		
+version: 
+5
+--------METAINFO OBJECT------------		
+id: DB
+		
+number: 0
+		
+type: Flag
+		
+description: "dbSNP Membership"
+		
+source: 
+		
+version: 
+6
+--------METAINFO OBJECT------------		
+id: DP
+		
+number: 1
+		
+type: Integer
+		
+description: "Approximate read depth; some reads may have been filtered"
+		
+source: 
+		
+version: 
+7
+--------METAINFO OBJECT------------		
+id: DS
+		
+number: 0
+		
+type: Flag
+		
+description: "Were any of the samples downsampled?"
+		
+source: 
+		
+version: 
+8
+--------METAINFO OBJECT------------		
+id: END
+		
+number: 1
+		
+type: Integer
+		
+description: "Stop position of the interval"
+		
+source: 
+		
+version: 
+9
+--------METAINFO OBJECT------------		
+id: FS
+		
+number: 1
+		
+type: Float
+		
+description: "Phred-scaled p-value using Fisher's exact test to detect strand bias"
+		
+source: 
+		
+version: 
+10
+--------METAINFO OBJECT------------		
+id: HaplotypeScore
+		
+number: 1
+		
+type: Float
+		
+description: "Consistency of the site with at most two segregating haplotypes"
+		
+source: 
+		
+version: 
+11
+--------METAINFO OBJECT------------		
+id: InbreedingCoeff
+		
+number: 1
+		
+type: Float
+		
+description: "Inbreeding coefficient as estimated from the genotype likelihoods per-sample when compared against the Hardy-Weinberg expectation"
+		
+source: 
+		
+version: 
+12
+--------METAINFO OBJECT------------		
+id: MLEAC
+		
+number: A
+		
+type: Integer
+		
+description: "Maximum likelihood expectation (MLE) for the allele counts (not necessarily the same as the AC)
+		
+source: 
+		
+version: 
+13
+--------METAINFO OBJECT------------		
+id: MLEAF
+		
+number: A
+		
+type: Float
+		
+description: "Maximum likelihood expectation (MLE) for the allele frequency (not necessarily the same as the AF)
+		
+source: 
+		
+version: 
+14
+--------METAINFO OBJECT------------		
+id: MQ
+		
+number: 1
+		
+type: Float
+		
+description: "RMS Mapping Quality"
+		
+source: 
+		
+version: 
+15
+--------METAINFO OBJECT------------		
+id: MQ0
+		
+number: 1
+		
+type: Integer
+		
+description: "Total Mapping Quality Zero Reads"
+		
+source: 
+		
+version: 
+16
+--------METAINFO OBJECT------------		
+id: MQRankSum
+		
+number: 1
+		
+type: Float
+		
+description: "Z-score From Wilcoxon rank sum test of Alt vs. Ref read mapping qualities"
+		
+source: 
+		
+version: 
+17
+--------METAINFO OBJECT------------		
+id: NEGATIVE_TRAIN_SITE
+		
+number: 0
+		
+type: Flag
+		
+description: "This variant was used to build the negative training set of bad variants"
+		
+source: 
+		
+version: 
+18
+--------METAINFO OBJECT------------		
+id: POSITIVE_TRAIN_SITE
+		
+number: 0
+		
+type: Flag
+		
+description: "This variant was used to build the positive training set of good variants"
+		
+source: 
+		
+version: 
+19
+--------METAINFO OBJECT------------		
+id: QD
+		
+number: 1
+		
+type: Float
+		
+description: "Variant Confidence/Quality by Depth"
+		
+source: 
+		
+version: 
+20
+--------METAINFO OBJECT------------		
+id: ReadPosRankSum
+		
+number: 1
+		
+type: Float
+		
+description: "Z-score from Wilcoxon rank sum test of Alt vs. Ref read position bias"
+		
+source: 
+		
+version: 
+21
+--------METAINFO OBJECT------------		
+id: SOR
+		
+number: 1
+		
+type: Float
+		
+description: "Symmetric Odds Ratio of 2x2 contingency table to detect strand bias"
+		
+source: 
+		
+version: 
+22
+--------METAINFO OBJECT------------		
+id: VQSLOD
+		
+number: 1
+		
+type: Float
+		
+description: "Log odds ratio of being a true variant versus being false under the trained gaussian mixture model"
+		
+source: 
+		
+version: 
+23
+--------METAINFO OBJECT------------		
+id: culprit
+		
+number: 1
+		
+type: String
+		
+description: "The annotation which was the worst performing in the Gaussian mixture model
+		
+source: 
+		
+version: 

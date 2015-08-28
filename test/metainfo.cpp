@@ -16,22 +16,23 @@ int main(int argc, char** argv) {
 
     std::vector<std::string> metainfo = sampleReader.get_metainfo();
 
-    std::cout << "-----------------the metadata on INFO-------------";
     std::vector<std::string>::iterator vit;
+    /*
+    std::cout << "-----------------the metadata on INFO-------------";
     for(vit=metainfo.begin();
         vit!=metainfo.end();
         ++vit) {
         std::cout << *vit << std::endl;
     }
+    */
 
-    std::cout << "----------------create metainfo objects----------";
     std::vector<MetaInfo> metainfoes;
     for(vit=metainfo.begin();
         vit!=metainfo.end();
         ++vit) {
         metainfoes.push_back(MetaInfo(*vit));
     }
-    std::cout << "---------------created metainfo objects------------";
+    std::cout << "---------------METAINFO OBJECTS------------";
     std::vector<MetaInfo>::iterator mit;
     for(mit=metainfoes.begin();
         mit!=metainfoes.end();

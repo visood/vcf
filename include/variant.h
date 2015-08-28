@@ -1,4 +1,4 @@
-#include "variant_file_reader.h"
+#include "info.h"
 
 /*
  * include the required fields in the Variant class.
@@ -11,6 +11,7 @@
 
 class Variant {
     private:
+        std::string rep_string;
         std::string chrom;
         int pos;
         std::string id;
@@ -29,5 +30,11 @@ class Variant {
     //getters
     std::map<std::string, std::string> get_info();
     std::vector<std::string> get_filter();
+    bool has_info_on(std::string);
+    std::string get_variant_string();
 
+    //print
+    void printInfo();
+    void printInfo(std::string);
+    void print_string();
 };

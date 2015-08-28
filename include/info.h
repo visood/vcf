@@ -13,6 +13,11 @@ class MetaInfo {
     // constructors
         MetaInfo(std::string infostring);
 
+    //getters
+        std::string get_id();
     //print
     void print(int ntab);
+
+    //filter
+    bool keep_variant(std::string value1, std::string opr, std::string value2);
 };

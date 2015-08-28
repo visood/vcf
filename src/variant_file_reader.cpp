@@ -57,15 +57,13 @@ VariantFileReader::VariantFileReader(std::string filepath){
         char c1 = aline[0];
         if(aline[0] == '#') {
             if(aline[1] == '#') {
+                metadata_strings.push_back(aline);
                 std::vector<std::string> split_aline ;
                 std::stringstream saline(aline.substr(2, std::string::npos));
                 std::string key;
                 std::getline(saline, key, '=');
                 std::string value;
                 std::getline(saline, value);
-                //begin debug comment
-                std::cout << "split meta-data line " << key << ",\t" <<  value << std::endl;
-                //end debug comment
                 if (metadata.count(key) == 0) {
                     metadata[key] = std::vector<std::string> ();
                 }
@@ -84,6 +82,10 @@ std::string VariantFileReader::get_header() {
     return header;
 }
 
+int VariantFileReader::get_number_variants(){
+    return variants.size();
+}
+
 std::string VariantFileReader::get_variant(int n){
     if (n > variants.size()) {
         return std::string ();
@@ -93,6 +95,10 @@ std::string VariantFileReader::get_variant(int n){
 
 std::vector<std::string> VariantFileReader::get_metainfo() {
     return metadata["INFO"];
+}
+
+std::vector<std::string> VariantFileReader::get_metadata_strings() {
+    return metadata_strings;
 }
 // print info
 void VariantFileReader::printMetadata(){
