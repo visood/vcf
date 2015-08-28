@@ -31,7 +31,7 @@ bool command_exists(std::vector<std::string> line, std::string option) {
 }
 
 void filter_help() {
-    std::cout << "COMMAND" <<  std::endl;
+    std::cout << "USAGE" <<  std::endl;
     std::cout << "  filter -i xxx -c xxx -v xxx -f xxx" << std::endl;
     std::cout << "Filter the variants in a VCF file using following options in your command." << std::endl;
     std::cout << "  -i: the info ID to filter on. " << std::endl;

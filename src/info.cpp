@@ -1,4 +1,5 @@
 #include "../include/info.h"
+#include "../include/command_line_helpers.h"
 #include <boost/algorithm/string.hpp>
 
 MetaInfo::MetaInfo(std::string infostring){
@@ -50,7 +51,7 @@ void MetaInfo::print(int ntab) {
 //filter
 bool MetaInfo::can_be_filtered(){
     if ((number != "1") and ((type != "Integer") or (type != "Float"))){
-        std::cout << "filtering for INFO " << id << " with Number = " << number << " not implemented" << std::endl;
+        std::cout << "WARNING: filtering for INFO " << id << " with Number = " << number << " not implemented" << std::endl;
         std::cout << "please use only INFO with Number = 1 and Type = Integer or Float" << std::endl;
         return false;
     }
@@ -71,8 +72,9 @@ bool MetaInfo::keep_variant(std::string value1,
             } else if (opr == "larger") {
                 result = v1 > v2;
             } else {
-                std::cout << "unknown operator " << opr << std::endl;
-                result = true;
+                std::cout << "WARNING: unknown operator " << opr << std::endl;
+                filter_help();
+                exit(EXIT_FAILURE);
             }
         } else if (type == "Float") {
             double v1 = stof(value1);
@@ -84,12 +86,13 @@ bool MetaInfo::keep_variant(std::string value1,
             } else if (opr == "larger") {
                 result = v1 > v2;
             } else {
-                std::cout << "unknown operator " << opr << std::endl;
-                result = true;
+                std::cout << "WARNING: unknown operator " << opr << std::endl;
+                filter_help();
+                exit(EXIT_FAILURE);
             }
         } else {
-            std::cout << "unknown / unimplemented type of info " << std::endl;
-            result = true;
+            std::cout << "WARNING: unknown / unimplemented type of info " << std::endl;
+            exit(EXIT_FAILURE);
         }
     return result;
 }

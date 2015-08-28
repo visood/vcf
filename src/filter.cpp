@@ -45,12 +45,19 @@ int main(int argc, char** argv) {
     std::map<std::string, MetaInfo*>::iterator mit;
 
     int number_variants = sampleFile.get_number_variants();
+    if ( (op != "equal") and (op != "smaller") and (op != "larger")) {
+        std::cout <<  "WARNING: unknown operator " << op << std::endl;
+        filter_help();
+        exit(EXIT_FAILURE);
+    }
     if (not metainfoes.count(infoID)) {
         std::cout << "no metadata on  INFO with ID " << infoID << std::endl;
+        filter_help();
         exit(EXIT_FAILURE);
     }
     MetaInfo* reqdInfo = metainfoes[infoID];
     if(not reqdInfo->can_be_filtered()) {
+        filter_help();
         exit(EXIT_FAILURE);
     }
     // go through the variants, and filter them
