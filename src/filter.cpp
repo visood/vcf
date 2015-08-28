@@ -41,15 +41,16 @@ int main(int argc, char** argv) {
     //out -- then we create the new filter metadata, and push that out
     std::string newfilter;
     if (op == "equal") { 
-        newfilter = "##FILTER=<ID=" + infoID + 
-            "Description=" + infoID + " equal to " + value;
+        newfilter = "##FILTER=<ID=" + infoID +  "," +  
+            "\"Description=" + infoID + " equal to " + value + "\">";
     } else if (op == "smaller") {
-        newfilter = "##FILTER=<ID=" + infoID + 
-            "Description=" + infoID + " smaller than " + value;
+        newfilter = "##FILTER=<ID=" + infoID + "," +  
+            "\"Description=" + infoID + " smaller than " + value + "\">";
     } else if (op == "larger"){
-        newfilter = "##FILTER=<ID=" + infoID + 
-            "Description=" + infoID + " larger than  " + value;
+        newfilter = "##FILTER=<ID=" + infoID + "," +  
+            "\"Description=" + infoID + " larger than  " + value + "\">";
     }
+
     if (newfilter.length() > 0) {
         std::cout << newfilter << std::endl;
     }

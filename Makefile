@@ -6,7 +6,6 @@ TEST = test
 CC = g++
 CXXFLAGS += -std=c++11 -Wall
 CXXFLAGS += -O3 -DNDEBUG
-CXXFLAGS += -lgsl
 CXXFLAGS += -lm
 CXXOPENMP = -fopenmp
 CLANG := $(shell g++ -v 2>&1 | grep clang | cut -d " " -f 2)
